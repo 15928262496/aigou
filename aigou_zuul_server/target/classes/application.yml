@@ -1,0 +1,15 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: ZUUL-SERVER
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+zuul:
+  routes:
+    user.serviceId: user-provider
+    user.path: /user/**
+  ignored-services: "*"
+  prefix: "/aigou"
